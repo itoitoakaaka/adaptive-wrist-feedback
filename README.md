@@ -1,5 +1,9 @@
 # Real-Time Adaptive Wrist Feedback Loop
 
+<p align="center">
+  <img src="assets/overview.svg" alt="Real-time adaptive wrist feedback loop" width="100%">
+</p>
+
 Flow:
 
 IMU / camera wrist measurement
