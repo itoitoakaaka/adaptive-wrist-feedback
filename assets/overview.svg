@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <style>
+    .title{font:700 42px Arial,sans-serif;fill:#123e79}
+    .h{font:700 23px Arial,sans-serif;fill:#123e79}
+    .b{font:400 17px Arial,sans-serif;fill:#385c84}
+    .s{font:400 15px Arial,sans-serif;fill:#617a96}
+    .box{fill:#f7fbff;stroke:#78a9dc;stroke-width:2}
+    .arrow{stroke:#3b73b8;stroke-width:5;fill:none;marker-end:url(#a)}
+    .line{stroke:#3b73b8;stroke-width:4;fill:none}
+    .icon{stroke:#164a7f;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3b73b8"/>
+    </marker>
+  </defs>
+
+  <text x="800" y="70" text-anchor="middle" class="title">Real-Time Adaptive Wrist Feedback Loop</text>
+
+  <!-- Camera -->
+  <rect x="30" y="125" width="210" height="215" rx="16" class="box"/>
+  <rect x="82" y="160" width="105" height="67" rx="12" class="icon"/>
+  <circle cx="134" cy="194" r="18" class="icon"/>
+  <path d="M108 160 l10-16 h32 l10 16" class="icon"/>
+  <text x="135" y="268" text-anchor="middle" class="h">Camera</text>
+  <text x="135" y="300" text-anchor="middle" class="b">Wrist landmark /</text>
+  <text x="135" y="325" text-anchor="middle" class="b">motion tracking</text>
+
+  <!-- IMU -->
+  <rect x="30" y="380" width="210" height="245" rx="16" class="box"/>
+  <rect x="88" y="445" width="78" height="45" rx="6" fill="#5c86b2"/>
+  <path d="M127 467 V420 M127 467 L180 447 M127 467 L79 495" class="icon"/>
+  <text x="185" y="450" class="s">x</text><text x="70" y="505" class="s">y</text><text x="132" y="417" class="s">z</text>
+  <text x="135" y="530" text-anchor="middle" class="h">IMU</text>
+  <text x="135" y="570" text-anchor="middle" class="b">Acceleration /</text>
+  <text x="135" y="598" text-anchor="middle" class="b">angular velocity</text>
+
+  <!-- Fusion -->
+  <rect x="340" y="250" width="245" height="260" rx="16" class="box"/>
+  <path d="M425 305 l38-20 38 20-38 20z M425 325 l38 20 38-20 M425 348 l38 20 38-20" class="icon"/>
+  <text x="462" y="412" text-anchor="middle" class="h">Sensor Fusion</text>
+  <text x="462" y="448" text-anchor="middle" class="b">Combine camera and IMU</text>
+  <text x="462" y="475" text-anchor="middle" class="b">to estimate wrist speed</text>
+
+  <path d="M240 232 H290 V380 H340" class="line"/>
+  <path d="M240 502 H290 V380" class="line"/>
+  <path d="M290 380 H340" class="arrow"/>
+
+  <!-- State -->
+  <rect x="635" y="250" width="235" height="260" rx="16" class="box"/>
+  <path d="M700 368 V305 M700 368 H790 M715 355 C730 318 748 360 765 325 C775 305 785 315 790 310" class="icon"/>
+  <text x="752" y="412" text-anchor="middle" class="h">Current-State</text>
+  <text x="752" y="440" text-anchor="middle" class="h">Estimation</text>
+  <text x="752" y="475" text-anchor="middle" class="b">wrist speed, confidence</text>
+
+  <path d="M585 380 H635" class="arrow"/>
+
+  <!-- Controller -->
+  <rect x="920" y="250" width="250" height="285" rx="16" class="box"/>
+  <circle cx="1045" cy="330" r="30" class="icon"/>
+  <path d="M1045 285 v16 M1045 359 v16 M1000 330 h16 M1074 330 h16 M1014 299 l12 12 M1064 349 l12 12 M1076 299 l-12 12 M1026 349 l-12 12" class="icon"/>
+  <text x="1045" y="405" text-anchor="middle" class="h">Adaptive Controller</text>
+  <text x="1045" y="442" text-anchor="middle" class="b">Target-speed error</text>
+  <text x="1045" y="468" text-anchor="middle" class="b">+ trial history</text>
+  <line x1="955" x2="1135" y1="485" y2="485" stroke="#aac5e0" stroke-width="2"/>
+  <text x="1045" y="515" text-anchor="middle" class="b">Output: direction +</text>
+  <text x="1045" y="540" text-anchor="middle" class="b">feedback magnitude</text>
+
+  <path d="M870 380 H920" class="arrow"/>
+
+  <!-- Feedback outputs -->
+  <rect x="1230" y="125" width="335" height="120" rx="16" class="box"/>
+  <rect x="1265" y="155" width="75" height="48" rx="4" class="icon"/>
+  <path d="M1282 212 h40 M1302 203 v10" class="icon"/>
+  <text x="1370" y="168" class="h">Visual Feedback</text>
+  <text x="1370" y="205" class="b">Arrow / gauge / screen cue</text>
+
+  <rect x="1230" y="270" width="335" height="120" rx="16" class="box"/>
+  <path d="M1272 320 h18 l25-18 v55 l-25-18 h-18z M1322 312 q18 18 0 36 M1337 300 q30 30 0 60" class="icon"/>
+  <text x="1370" y="312" class="h">Auditory Feedback</text>
+  <text x="1370" y="350" class="b">Tone pitch / alert sound</text>
+
+  <rect x="1230" y="415" width="335" height="120" rx="16" class="box"/>
+  <path d="M1282 490 q0-36 18-36 q8 0 8 10 v-24 q0-10 8-10 q8 0 8 10 v24 v-30 q0-10 8-10 q8 0 8 10 v32 q0-10 8-10 q8 0 8 10 v28 q0 26-24 38 h-35 q-17-15-15-42" class="icon"/>
+  <text x="1370" y="457" class="h">Haptic Feedback</text>
+  <text x="1370" y="495" class="b">Vibration / tactile cue</text>
+
+  <path d="M1170 365 H1192 V185 H1230" class="arrow"/>
+  <path d="M1170 380 H1230" class="arrow"/>
+  <path d="M1170 395 H1192 V475 H1230" class="arrow"/>
+
+  <!-- Human response -->
+  <rect x="1230" y="590" width="335" height="175" rx="16" class="box"/>
+  <circle cx="1302" cy="638" r="18" class="icon"/>
+  <path d="M1290 660 q12-10 25 0 l20 42 h42 q14 0 14 12 q0 12-14 12 h-62 l-32-36" class="icon"/>
+  <path d="M1368 650 q28 0 28 27 M1396 677 l-10-8 M1396 677 l-10 8" class="icon"/>
+  <text x="1405" y="642" class="h">Human Response</text>
+  <text x="1405" y="670" class="h">on Next Trial</text>
+  <text x="1405" y="710" text-anchor="middle" class="b">Performs the movement again</text>
+  <text x="1405" y="738" text-anchor="middle" class="b">with updated behavior</text>
+
+  <path d="M1398 535 V590" class="arrow"/>
+
+  <!-- Re-estimation loop -->
+  <path d="M1230 680 H135 V625" class="line"/>
+  <path d="M135 625 V610" class="arrow"/>
+  <text x="700" y="660" text-anchor="middle" class="h">re-estimation</text>
+
+  <text x="800" y="850" text-anchor="middle" class="s">Current demo: simulated sensor streams. Future extensions: MediaPipe/OpenCV wrist tracking, serial/BLE IMU, real visual/audio/haptic devices, and human evaluation.</text>
+</svg>
